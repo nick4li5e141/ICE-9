@@ -1,0 +1,56 @@
+
+
+<!--my design-->
+
+
+<%- include("partials/header.ejs") %>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Update Pokémon Details</h2>
+    <form action="/updatePokemon/<%= pokemon._id %>" method="POST" class="row g-3">
+        <div class="col-md-6">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" name="pokemonName" value="<%= pokemon.name %>" required>
+        </div>
+        <div class="col-md-6">
+            <label for="height" class="form-label">Height:</label>
+            <input type="number" class="form-control" id="height" name="pokemonHeight" value="<%= pokemon.height %>" required>
+        </div>
+        <div class="col-12">
+            <label for="photo" class="form-label">Photo URL:</label>
+            <input type="text" class="form-control" id="photo" name="pokemonPhoto" value="<%= pokemon.photo %>" required>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Update Pokémon</button>
+        </div>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>
+
+
+
+
+
+
+
+
+
+
+<!--old design-->
+<!-- 
+
+<%- include("partials/header.ejs") %>
+
+
+<form action="/updatePokemon/<%= pokemon._id %>" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="pokemonName" value="<%= pokemon.name %>" required>
+    <label for="height">Height:</label>
+    <input type="number" id="height" name="pokemonHeight" value="<%= pokemon.height %>" required>
+    <label for="photo">Photo URL:</label>
+    <input type="text" id="photo" name="pokemonPhoto" value="<%= pokemon.photo %>" required>
+    <input type="submit" value="Update Pokemon">
+</form>
+
+<%- include("partials/footer.ejs") %> -->
